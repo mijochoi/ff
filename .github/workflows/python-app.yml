@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+
+# Sample data
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+user_access_data = [100, 120, 90, 110, 130, 95]
+
+# Create a line chart for the trend over time
+plt.plot(months, user_access_data, marker='o', linestyle='-', color='b')
+plt.title('Official Feedback Access Over Time')
+plt.xlabel('Months')
+plt.ylabel('Number of Users')
+
+# Save the chart to a PDF file
+with PdfPages('official_feedback_trend_chart.pdf') as pdf:
+    pdf.savefig()
+    plt.close()
+
